@@ -14,3 +14,7 @@ Este proyecto es un generador de currículums optimizados para aprobar los filtr
 - **Framework web:** FastAPI
 - **Base de datos:** PostgreSQL
 - **Documentación API:** ¿Swagger?
+
+## Contribuciones
+
+¡Las contribuciones son bienvenidas! Por favor, abre un _issue_ o envía un _pull request_.
