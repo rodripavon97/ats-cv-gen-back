@@ -2,26 +2,23 @@
 
 ## Descripción General
 
-  **Nombre base de datos:**
-  **Base de Datos** (PostgreSQL)
-  **Propósito:** Guardar los inputs de los CVs de cada usuario
+  - **Nombre base de datos:**
+  - **Base de Datos** (PostgreSQL)
+  - **Propósito:** Guardar los inputs de los CVs de cada usuario
   
 
 ## Tablas
 
   ### app_user
   
-  **Datos básicos del usuario**
+  - **Datos básicos del usuario**  
+  - **Campos/Columnas:** id (PK), first_name (text), last_name (text), email (text), password_hash (text), created_at (timestamptz), updated_at (timestamptz). Todo NOT NULL
   
-  **Campos/Columnas:** id (PK), first_name (text), last_name (text), email (text), password_hash (text), created_at (timestamptz), updated_at (timestamptz). Todo NOT NULL
-  
-
   ### cv
   
-  **Datos del CV**.
-  **Vinculada a la tabla app_user** y tiene otras tablas vinculadas a ella.
-  
-  **Campos/Columnas:** id (PK), app_user_id (FK), telephone (int), role (varchar-30), summary (text), created_at (timestamptz), updated_at (timestamptz). Todo NOT NULL
+  - **Datos del CV**.
+  - **Vinculada a la tabla app_user** y tiene otras tablas vinculadas a ella.
+  - **Campos/Columnas:** id (PK), app_user_id (FK), telephone (int), role (varchar-30), summary (text), created_at (timestamptz), updated_at (timestamptz). Todo NOT NULL
 
   Nombre de la tabla: **experience**
   Propósito: Almacena **datos de la experiencia**. Está **vinculada a la tabla cv**.
