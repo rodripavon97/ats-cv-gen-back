@@ -5,15 +5,22 @@
   **Nombre base de datos:**
   **Base de Datos** (PostgreSQL)
   **Propósito:** Guardar los inputs de los CVs de cada usuario
+  
 
 ## Tablas
 
-  Nombre de la tabla: **app_user**
-  Propósito: Almacena **datos básicos del usuario**, como nombre, apellido, email y contraseña
+  ### app_user
+  
+  **Datos básicos del usuario**
+  
   **Campos/Columnas:** id (PK), first_name (text), last_name (text), email (text), password_hash (text), created_at (timestamptz), updated_at (timestamptz). Todo NOT NULL
+  
 
-  Nombre de la tabla: **cv**
-  Propósito: Almacena **datos del CV**. Está **vinculada a la tabla app_user** y tiene otras tablas vinculadas a ella.
+  ### cv
+  
+  **Datos del CV**.
+  **Vinculada a la tabla app_user** y tiene otras tablas vinculadas a ella.
+  
   **Campos/Columnas:** id (PK), app_user_id (FK), telephone (int), role (varchar-30), summary (text), created_at (timestamptz), updated_at (timestamptz). Todo NOT NULL
 
   Nombre de la tabla: **experience**
