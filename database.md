@@ -11,7 +11,8 @@
 
   ### app_user
   
-  - **Datos básicos del usuario**  
+  - **Datos básicos del usuario**
+  - **Tabla PARENT**
   - **Campos/Columnas:** id (PK), first_name (text), last_name (text), email (text), password_hash (text), created_at (timestamptz), updated_at (timestamptz). **Todo NOT NULL**
   
   ### cv
