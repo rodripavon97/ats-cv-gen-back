@@ -1,12 +1,12 @@
-#Documentación Database
+# Documentación Database
 
-##Descripción General
+## Descripción General
 
   **Nombre base de datos:**
   **Base de Datos** (PostgreSQL)
   **Propósito:** Guardar los inputs de los CVs de cada usuario
 
-##Tablas
+## Tablas
 
   Nombre de la tabla: **app_user**
   Propósito: Almacena **datos básicos del usuario**, como nombre, apellido, email y contraseña
