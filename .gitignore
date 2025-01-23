@@ -1,0 +1,84 @@
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos de entornos virtuales
+venv/
+.env
+.env.*
+*.venv
+
+# Archivos de Python generados
+__pycache__/
+*.py[cod]
+*$py.class
+*.log
+*.sqlite3
+
+# Archivos de dependencias
+Pipfile
+Pipfile.lock
+poetry.lock
+
+# Archivos de configuración de IDEs/editor de texto
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Configuración de bases de datos y caché local
+*.db
+*.sqlite
+*.db-journal
+
+# Archivos de despliegue y contenedores
+*.dockerignore
+docker-compose.override.yml
+docker-compose.dev.yml
+.Dockerfile
+
+# Logs y reportes
+*.log
+logs/
+*.out
+*.err
+
+# Migrations y backups de la base de datos
+migrations/
+alembic/versions/
+dump.sql
+*.bak
+
+# Archivos de pruebas y cobertura de código
+htmlcov/
+.coverage
+.tox/
+nosetests.xml
+coverage.xml
+*.cover
+*.pytest_cache
+__pycache__/
+pytestdebug.log
+
+# Archivos de caché de pip
+*.egg-info/
+*.egg
+dist/
+build/
+site/
+
+# Configuración de despliegue
+instance/
+*.crt
+*.key
+*.pem
+
+# Archivos de lock de seguridad
+poetry.lock
+yarn.lock
+package-lock.json
+
+# Configuración de CI/CD
+.github/
+.circleci/
+.gitlab-ci.yml
