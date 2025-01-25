@@ -5,6 +5,7 @@ from alembic import context
 from src.database import Base
 import os
 from src.auth.models import User
+from src.cv.models import Cv, Experence, Skill, Soft_Skill, Certifications, Academic, Profile, Language
 
 # Cargar configuración de Alembic
 config = context.config

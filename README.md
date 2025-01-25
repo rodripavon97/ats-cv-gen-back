@@ -59,6 +59,9 @@ También puedes conectarte desde tu máquina local usando herramientas como DBea
 - Contraseña: `admin`
 - Base de datos: `mydatabase`
 
+## IMPORTANTE!!! Modificar el alembic/env.py
+Se debe agregar cada modelo/clase que se crea
+
 ## Migraciones de base de datos
 
 Este proyecto utiliza Alembic para la gestión de migraciones de la base de datos de forma síncrona.
