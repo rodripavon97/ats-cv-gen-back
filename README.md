@@ -16,7 +16,8 @@ Este proyecto es una API construida con FastAPI para la generación de CVs y aut
    cd cv-generator
    ```
 
-2. Crea un archivo `.env` basado en el archivo de ejemplo:
+2. Crea un archivo `.env` basado en el archivo de ejemplo (En caso):
+> **¡Importante!** Si estás haciendo con Docker salta este paso.
 
    ```bash
    cp .env.example .env
@@ -59,8 +60,9 @@ También puedes conectarte desde tu máquina local usando herramientas como DBea
 - Contraseña: `admin`
 - Base de datos: `mydatabase`
 
-## IMPORTANTE!!! Modificar el alembic/env.py
-Se debe agregar cada modelo/clase que se crea
+## Modificar el alembic/env.py
+
+Se debe agregar cada modelo/clase que se crea.
 
 ## Migraciones de base de datos
 
@@ -89,6 +91,9 @@ Para deshacer la última migración:
 ```bash
 docker exec -it fastapi_app alembic downgrade -1
 ```
+
+## .gitkeep
+No eliminar este archivo, se encarga de mantener la carpeta versions vacia.
 
 ## Autor
 
