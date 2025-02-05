@@ -60,6 +60,20 @@ También puedes conectarte desde tu máquina local usando herramientas como DBea
 - Contraseña: `admin`
 - Base de datos: `mydatabase`
 
+  📂 ats-cv-gen-back/
+ ├── 📂 app/
+ │    ├── 📂 models/      # Definición de modelos de base de datos
+ │    ├── 📂 routes/      # Endpoints de la API
+ │    ├── 📂 services/    # Lógica de negocio
+ │    ├── 📂 tests/       # Pruebas automatizadas
+ │    ├── __init__.py
+ │    ├── main.py        # Punto de entrada de FastAPI
+ │    ├── config.py      # Configuración del proyecto
+ ├── 📜 README.md
+ ├── 📜 requirements.txt
+ ├── 📜 .env.example
+ ├── 📜 docker-compose.yml
+
 ## Modificar el alembic/env.py
 
 Se debe agregar cada modelo/clase que se crea.
