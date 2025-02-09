@@ -1,4 +1,18 @@
 services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres_db
+    restart: always
+    environment:
+      POSTGRES_HOST: "35.226.215.172"
+      POSTGRES_USER: share_it_ats_user
+      POSTGRES_PASSWORD: "10x5C.0_0T0N7"
+      POSTGRES_DB: share_it_ats
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
   app:
     build: .
     container_name: fastapi_app
@@ -8,24 +22,11 @@ services:
       - postgres
     environment:
       - DATABASE_URL=postgresql://share_it_ats_user:10x5C.0_0T0N7@35.226.215.172:5432/share_it_ats
+      - SECRET_KEY=10x5C.0_0T0N7
 
     volumes:
       - .:/app
     restart: always
-
-  postgres:
-    image: postgres:latest
-    container_name: postgres_db
-    restart: always
-    environment:
-      POSTGRES_HOST: "35.226.215.172"
-      POSTGRES_USER: share_it_ats_user
-      POSTGRES_PASSWORD: 10x5C.0_0T0N7
-      POSTGRES_DB: share_it_ats
-    ports:
-      - "5432:5432"
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
 
 volumes:
   postgres_data:
