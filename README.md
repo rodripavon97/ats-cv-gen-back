@@ -59,10 +59,7 @@ También puedes conectarte desde tu máquina local usando herramientas como DBea
 - Usuario: `postgres`
 - Contraseña: `admin`
 - Base de datos: `mydatabase`
-
-## Modificar el alembic/env.py
-
-Se debe agregar cada modelo/clase que se crea.
+  
 
 ## Migraciones de base de datos
 
