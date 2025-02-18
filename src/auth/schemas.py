@@ -13,14 +13,14 @@ class UserBase(BaseModel):
 # Define un esquema para la creación de un usuario, heredando de UserBase
 class UserCreate(UserBase):
     password: str
-    first_name: str
-    last_name: str
+    first_name: constr(min_length=1, max_length=30)
+    last_name: constr(min_length=1, max_length=30)
 
 # Define un esquema para la respuesta de un usuario, heredando de UserBase
 class UserResponse(UserBase):
     id: int
-    first_name: str
-    last_name: str
+    first_name: constr(min_length=1, max_length=30)
+    last_name: constr(min_length=1, max_length=30)
     is_active: bool
     created_at: datetime
 
