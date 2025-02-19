@@ -1,7 +1,9 @@
+import os
 from passlib.context import CryptContext
 from datetime import datetime, timedelta
 from jose import JWTError, jwt
-import os
+
+from src.logger_config import logger
 
 SECRET_KEY = os.getenv("SECRET_KEY", "10x5C.0_0T0N7")
 if not isinstance(SECRET_KEY, str) or not SECRET_KEY.strip():
@@ -32,9 +34,9 @@ def verify_access_token(token: str):
 
 
 hashed = hash_password("mi_contraseña")
-print("Hash:", hashed)
-print("Verificación:", verify_password("mi_contraseña", hashed))
+logger.info(f"Hash: {hashed}")
+logger.info(f"Verificación: {verify_password("mi_contraseña", hashed)}")
 
 token = create_access_token({"sub": "usuario123"})
-print("Token:", token)
-print("Token verificado:", verify_access_token(token))
+logger.info(f"Token: {token}")
+logger.info(f"Token verificado: {verify_access_token(token)}")

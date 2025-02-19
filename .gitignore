@@ -45,7 +45,6 @@ logs/
 
 # Migrations y backups de la base de datos
 migrations/
-alembic/versions/*.py
 dump.sql
 *.bak
 

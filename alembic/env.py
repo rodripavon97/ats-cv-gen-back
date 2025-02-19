@@ -1,9 +1,12 @@
+import os
 from logging.config import fileConfig
 from sqlalchemy import pool
 from sqlalchemy.engine import create_engine
 from alembic import context
+
 from src.database import Base
-import os
+from src.auth.models import *
+from src.cv.models import *
 
 # Cargar configuración de Alembic
 config = context.config
