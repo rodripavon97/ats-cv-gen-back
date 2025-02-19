@@ -89,8 +89,42 @@ Para deshacer la última migración:
 docker exec -it fastapi_app alembic downgrade -1
 ```
 
-## .gitkeep
-No eliminar este archivo, se encarga de mantener la carpeta versions vacia.
+## 📌 Uso del Logger en FastAPI
+
+En el desarrollo de aplicaciones, especialmente en entornos productivos, es fundamental llevar un registro detallado de eventos, advertencias y errores.  
+
+El uso de `logger` en lugar de simples impresiones `print()` nos permite:
+
+✔ Mantener un registro estructurado de lo que sucede en la aplicación.  
+✔ Definir niveles de importancia para los mensajes (`DEBUG`, `INFO`, `WARNING`, `ERROR`, `CRITICAL`).  
+✔ Guardar logs en archivos para análisis posterior.  
+✔ Integrarse con sistemas externos de monitoreo y depuración.  
+
+Al implementar un `logger` personalizado en FastAPI, podemos controlar y registrar eventos de manera eficiente sin afectar el rendimiento ni la legibilidad del código.  
+
+
+```python
+from src.logger_config import logger
+
+logger.debug("Para depuración detallada")
+logger.info("Información general")
+logger.warning("Advertencias")  # Advertencias
+logger.error("Errores que afectan la ejecución")
+logger.critical("Errores graves")
+```
+
+### Ejemplo:
+
+```python
+from src.logger_config import logger
+
+logger.info(f"Token: {token}")
+```
+
+#### Output
+```bash
+fastapi_app  | INFO: ->  [security.py:40] msg:" Token: eyJhbGciOiJIUzI... " 23:23:45
+```
 
 ## Autor
 
