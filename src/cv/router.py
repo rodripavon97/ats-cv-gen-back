@@ -1,4 +1,6 @@
 from fastapi import APIRouter, Depends, HTTPException
+from sqlalchemy.orm import Session
+from schemas import CvCreate
 from fastapi.responses import FileResponse
 from sqlalchemy.orm import Session
 from database import get_db
@@ -17,3 +19,12 @@ async def generate_cv_pdf(cv_id: uuid.UUID, db: Session = Depends(get_db)):
         return FileResponse(pdf_filename, media_type="application/pdf", filename=pdf_filename)
     except ValueError as e:
         raise HTTPException(status_code=404, detail=str(e))
+
+
+router = APIRouter()
+
+@router.post("/register/")
+def create_cv(cv: CvCreate, db: Session = Depends(get_db)):
+   
+    return {"message": "User created successfully"}
+
