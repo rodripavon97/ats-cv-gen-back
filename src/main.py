@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from src.auth.router import router as auth_router
 from src.database import init_db
+from cv.router import router as cv_router
 
 DATABASE_URL = "postgresql://share_it_ats_user:10x5C.0_0T0N7@35.226.215.172:5432/share_it_ats"
 
@@ -27,6 +28,7 @@ app.add_middleware(
 )
 
 app.include_router(auth_router, prefix="/auth", tags=["Auth"])
+app.include_router(cv_router, prefix="/cv", tags=["CV"])
 
 @app.get("/")
 def read_root():
