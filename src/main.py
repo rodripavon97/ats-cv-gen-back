@@ -1,16 +1,19 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from contextlib import asynccontextmanager
+import uvicorn
+
 from src.auth.router import router as auth_router
 from src.database import init_db
 from cv.router import router as cv_router
 
-DATABASE_URL = "postgresql://share_it_ats_user:10x5C.0_0T0N7@35.226.215.172:5432/share_it_ats"
+from src.logger_config import logger
 
-def lifespan(app: FastAPI):
-    print("Iniciando la aplicación...")
-    init_db()  
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    logger.info("✅ Iniciando la aplicación")
     yield
-    print("Apagando la aplicación...")
+    logger.info("❌ Apagando la aplicación")
 
 app = FastAPI(
     title="CV Generator API",
@@ -34,8 +37,6 @@ app.include_router(cv_router, prefix="/cv", tags=["CV"])
 def read_root():
     return {"message": "¡Bienvenido a la API de CV Generator!"}
 
-print(f"DATABASE_URL: {DATABASE_URL}")
 
 if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run("src.main:app", host="0.0.0.0", port=8000, reload=True)
+    uvicorn.run("src.main:app", host="0.0.0.0", port=8000, reload=True, log_config=None)
